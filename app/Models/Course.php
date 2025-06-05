@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model
@@ -42,6 +43,11 @@ class Course extends Model
     public function courseStudents(): HasMany
     {
         return $this->hasMany(CourseStudent::class, 'course_id');
+    }
+
+    public function courseTestimonials(): HasOne
+    {
+        return $this->hasOne(CourseTestimonial::class, 'course_id');
     }
 
     public function courseMentors(): HasMany
