@@ -22,6 +22,8 @@ class PricingResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Courses';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -34,9 +36,11 @@ class PricingResource extends Resource
                             ->required(),
 
                         TextInput::make('price')
-                            ->integer()
                             ->numeric()
-                            ->prefix('IDR'),
+                            ->prefix('IDR')
+                            ->minValue(0)
+                            ->maxValue(9999999999)
+                            ->required(),
 
                         TextInput::make('duration')
                             ->integer()
@@ -55,7 +59,8 @@ class PricingResource extends Resource
                     ->searchable(),
 
                 TextColumn::make('price')
-                    ->sortable(),
+                    ->sortable()
+                    ->formatStateUsing(fn($state) => 'IDR ' . number_format($state, 0, '.', ',')),
 
                 TextColumn::make('duration')
                     ->sortable(),

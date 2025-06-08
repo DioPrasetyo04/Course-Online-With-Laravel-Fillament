@@ -21,7 +21,8 @@ class Course extends Model
         'thumbnail',
         'about',
         'is_popular',
-        'category_id'
+        'category_id',
+        'course_testimonials_id',
     ];
 
     public function setNameAttribute($value)

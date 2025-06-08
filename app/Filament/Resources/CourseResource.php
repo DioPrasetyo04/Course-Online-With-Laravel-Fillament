@@ -31,6 +31,8 @@ class CourseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
+    protected static ?string $navigationGroup = 'Courses';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -47,17 +49,13 @@ class CourseResource extends Resource
                     ]),
                 Fieldset::make("Addtional")
                     ->schema([
+                        // dapat menambahkan berulang formnya menggunakan repeater pada fillament
                         Repeater::make("benefits")
                             ->relationship("benefits")
                             ->schema([
                                 TextInput::make("name")
                                     ->required()
                             ]),
-                        // Repeater::make("sneak_peek")
-                        //     ->schema([
-                        //         FileUpload::make("sneak_peak")
-                        //             ->required()
-                        //     ]),
                         Textarea::make("about")
                             ->required(),
                         Select::make("is_popular")
@@ -114,7 +112,6 @@ class CourseResource extends Resource
         return [
             // nambahin course section didalam course yang sudah dibuat
             CourseSectionsRelationManager::class,
-            CourseTestimonialsRelationManager::class
         ];
     }
 

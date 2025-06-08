@@ -2,31 +2,36 @@
 
 namespace App\Filament\Resources\CourseResource\RelationManagers;
 
-use Filament\Forms;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Symfony\Component\Uid\MaxUlid;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\RelationManagers\RelationManager;
 
 class CourseSectionsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'CourseSections';
+    protected static string $relationship = 'courseSections';
 
     public function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
+                    ->label('Section Name')
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make("position")
+                TextInput::make('position')
+                    ->label('Position')
+                    ->prefix('Position')
+                    ->default(function () {
+                        $lastPosition = $this->getOwnerRecord()->courseSections()->max('position');
+                        return $lastPosition ? $lastPosition + 1 : 1;
+                    })
                     ->required()
                     ->numeric()
-                    ->prefix("Position")
+                    ->minValue(1),
             ]);
     }
 
@@ -35,8 +40,8 @@ class CourseSectionsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('position'),
+                TextColumn::make('name'),
+                TextColumn::make('position'),
             ])
             ->filters([
                 //

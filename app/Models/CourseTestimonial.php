@@ -25,4 +25,5 @@ class CourseTestimonial extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    /*******  174ddfb3-abc1-449d-b944-d7e739b60608  *******/
 }

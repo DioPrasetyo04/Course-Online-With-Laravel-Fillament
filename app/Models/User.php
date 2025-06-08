@@ -9,6 +9,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -16,6 +17,7 @@ class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable, HasRoles;
 
+    // untuk mengedit data hak akses dashboard admin
     public function canAccessPanel(Panel $panel): bool
     {
         return $this->hasRole('admin');
@@ -75,5 +77,17 @@ class User extends Authenticatable implements FilamentUser
     public function courseTestimonials(): HasOne
     {
         return $this->hasOne(CourseTestimonial::class, 'user_id');
+    }
+
+    public function courseMentors(): HasMany
+    {
+        return $this->hasMany(CourseMentor::class);
+    }
+
+    public function scopeStudents($query)
+    {
+        return $query->whereHas('roles', function ($query) {
+            $query->where('name', 'student');
+        });
     }
 }
