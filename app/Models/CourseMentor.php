@@ -22,7 +22,7 @@ class CourseMentor extends Model
     public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class, 'course_id');
-    }
+    } 
 
     public function mentor(): BelongsTo
     {

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->text('about');
             $table->boolean('is_popular');
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
+            $table->foreignId('course_testimonials_id')->constrained('course_testimonials')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
