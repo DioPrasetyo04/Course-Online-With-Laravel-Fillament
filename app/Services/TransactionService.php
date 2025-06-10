@@ -1,16 +1,21 @@
 <?php
 
+namespace App\Services;
+
 use App\Models\Pricing;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\PricingRepository;
+use App\Repositories\PricingRepositoryInterface;
+use App\Repositories\TransactionRepository;
+use TransactionRepositoryInterface;
 
 class TransactionService
 {
     protected $pricingRepository;
     protected $TransactionRepository;
 
-    public function __construct(PricingRepository $pricingRepository, TransactionRepository $TransactionRepository)
+    public function __construct(PricingRepositoryInterface $pricingRepository, TransactionRepositoryInterface $TransactionRepository)
     {
         $this->pricingRepository = $pricingRepository;
         $this->TransactionRepository = $TransactionRepository;
@@ -69,33 +74,6 @@ class TransactionService
             return collect([]);
         }
         return $this->TransactionRepository->getUserTransactions($user->id);
-    }
-
-    public function createBooking(Pricing $pricing): Transaction
-    {
-        $checkoutData = $this->prepareCheckout($pricing);
-
-        $transactionData = [
-            'user_id' => $checkoutData['user']->id,
-            'pricing_id' => $checkoutData['pricing']->id,
-            'sub_total_amount' => $checkoutData['sub_total_amount'],
-            'total_tax_amount' => $checkoutData['total_tax_amount'],
-            'grand_total_amount' => $checkoutData['grand_total_amount'],
-            'is_paid' => false,
-            'started_at' => $checkoutData['started_at'],
-            'ended_at' => $checkoutData['ended_at'],
-        ];
-
-        if ($checkoutData['alreadySubscribed']) {
-            $transactionData['is_paid'] = true;
-        }
-
-        // proofnya bentuknya image
-        if ($checkoutData['proof']) {
-            $transactionData['proof'] = $checkoutData['proof'];
-        }
-
-        return $this->TransactionRepository->createBooking($transactionData);
     }
 
     public function findBookingId(string $bookingId)
