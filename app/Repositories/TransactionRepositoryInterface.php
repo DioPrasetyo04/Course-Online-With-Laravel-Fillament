@@ -5,7 +5,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 interface TransactionRepositoryInterface
 {
-    public function findBookingId(string $bookingId): ?Transaction;
+    // mempersiapkan method yang digunakan dalam transaction repository
+    public function findTransactionId(string $bookingId): ?Transaction;
     public function createTransaction(array $data): Transaction;
     public function getUserTransactions(int $userId): Collection;
 }

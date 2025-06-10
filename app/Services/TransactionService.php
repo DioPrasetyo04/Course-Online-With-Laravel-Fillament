@@ -76,8 +76,8 @@ class TransactionService
         return $this->TransactionRepository->getUserTransactions($user->id);
     }
 
-    public function findBookingId(string $bookingId)
+    public function findTransactionId(string $bookingId)
     {
-        return $this->TransactionRepository->findBookingId($bookingId);
+        return $this->TransactionRepository->findTransactionId($bookingId);
     }
 }
