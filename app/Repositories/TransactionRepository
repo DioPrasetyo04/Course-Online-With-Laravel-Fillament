@@ -1,0 +1,30 @@
+<?php
+
+use App\Models\Transaction;
+use TransactionRepositoryInterface;
+use Illuminate\Database\Eloquent\Collection;
+
+class TransactionRepository implements TransactionRepositoryInterface
+{
+
+    protected $transaction;
+    public function __construct(Transaction $transactionModel)
+    {
+        $this->transaction = $transactionModel;
+    }
+
+    public function findBookingId(string $bookingId): Transaction|null
+    {
+        return $this->transaction->where('transaction_id', $bookingId)->first();
+    }
+
+    public function createBooking(array $data): Transaction
+    {
+        return $this->transaction->create($data);
+    }
+
+    public function getUserTransactions(int $userId): Collection
+    {
+        return $this->transaction->with('pricing')->where('user_id', $userId)->orderBy('created_at', 'desc')->get();
+    }
+}
