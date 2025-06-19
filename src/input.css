@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    min-height: 100vh;
+    position: relative;
+    font-family: "Poppins";
+    color: #0a0723; 
+    background: #f8faf9;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-custom-gradient {
+    background: linear-gradient(90deg, #a531ff 0%, #ff1fa5 100%);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    line-height: 28px;
+    gap: 20px;
+    width: 750px;
+}
+
+article h1, article h2 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    width: 530px;
+}
+
+article h3, article h4 {
+    font-weight: 600;
+    font-size: 18px;
+    width: 530px;
+}
+
+article p {
+    line-height: 28px;
+}
+
+article img {
+    border-radius: 14px;
+    width: 580px;
+}
+
+article ul {
+    margin-left: 2rem;
+    list-style-type: disc;
+    color: #0A0723;
+    background: #F8FAF9;
+    display: flex;
+    flex-direction: column;
+}
+
+article p + ul {
+   margin-top: -20px;
+}
+
+article p + ol {
+   margin-top: -20px;
+}
+
+article ol {
+    margin-left: 2rem;
+    list-style-type: decimal;
+    color: #0A0723;
+    background: #F8FAF9;
+    display: flex;
+    flex-direction: column;
+}
+
+@layer utilities{
+    .drop-shadow-effect{
+        box-shadow: 0px 12px 30px 0px #2F6A6280;
+    }
+}
+
+.bg-custom-gradient{
+    background: linear-gradient(90deg, #A531FF 0%, #FF1FA5 100%);
+}

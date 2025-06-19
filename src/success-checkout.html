@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./output.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <title>Checkout Success - Obito Online Learning Platform</title>
+        <meta name="description" content="Obito is an innovative online learning platform that empowers students and professionals with high-quality, accessible courses.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/logo-64.png">
+        <link rel="apple-touch-icon" href="assets/images/logos/logo-64.png">
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Obito Online Learning Platform - Learn Anytime, Anywhere">
+        <meta property="og:description" content="Obito is an innovative online learning platform that empowers students and professionals with high-quality, accessible courses.">
+        <meta property="og:image" content="https://obito-platform.netlify.app/assets/images/logos/logo-64-big.png">
+        <meta property="og:url" content="https://obito-platform.netlify.app">
+        <meta property="og:type" content="website">
+    </head>
+    <body> 
+        <nav id="nav-auth" class="flex w-full bg-white border-b border-obito-grey">
+            <div class="flex w-[1280px] px-[75px] py-5 items-center justify-between mx-auto">
+                <div class="flex items-center gap-[30px]">
+                    <a href="index.html" class="flex shrink-0">
+                        <img src="assets/images/logos/logo.svg" class="flex shrink-0" alt="logo">
+                    </a>
+                    <form action="search-course.html" class="relative ">
+                        <label class="group">
+                            <input type="text" name="" id="" class="appearance-none outline-none ring-1 ring-obito-grey rounded-full w-[400px]  py-[14px] px-5 bg-white font-bold placeholder:font-normal placeholder:text-obito-text-secondary group-focus-within:ring-obito-green transition-all duration-300 pr-[50px]" placeholder="Search course by name">
+                            <button type="submit" class="absolute right-0 top-0 h-[52px] w-[52px] flex shrink-0 items-center justify-center">
+                                <img src="assets/images/icons/search-normal-green-fill.svg" class="flex shrink-0 w-10 h-10" alt="">
+                            </button>
+                        </label>
+                    </form>
+                </div>
+                <div class="flex items-center gap-5 justify-end">
+                    <a href="#" class="flex shrink-0">
+                        <img src="assets/images/icons/device-message.svg" class="flex shrink-0" alt="icon">
+                    </a>
+                    <a href="catalog-v2.html" class="flex shrink-0">
+                        <img src="assets/images/icons/category.svg" class="flex shrink-0" alt="icon">
+                    </a>
+                    <a href="#" class="flex shrink-0">
+                        <img src="assets/images/icons/notification.svg" class="flex shrink-0" alt="icon">
+                    </a>
+                    <div class="h-[50px] flex shrink-0 bg-obito-grey w-px"></div>
+                    <div id="profile-dropdown" class="relative flex items-center gap-[14px]">
+                        <div class="flex shrink-0 w-[50px] h-[50px] rounded-full overflow-hidden bg-obito-grey">
+                            <img src="assets/images/photos/sami.png" class="w-full h-full object-cover" alt="photo">
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Tamara Utami</p>
+                            <p class="text-sm text-obito-text-secondary">Programmer UI</p>
+                        </div>
+                        <button id="dropdown-opener" class="flex shrink-0 w-6 h-6">
+                            <img src="assets/images/icons/arrow-circle-down.svg" class="w-6 h-6" alt="icon">
+                        </button>
+                        <div id="dropdown" class="absolute top-full right-0 mt-[7px] w-[170px] h-fit bg-white rounded-xl border border-obito-grey py-4 px-5 shadow-[0px_10px_30px_0px_#B8B8B840] z-10 hidden">
+                            <ul class="flex flex-col gap-[14px]">
+                                <li class="hover:text-obito-green transition-all duration-300">
+                                    <a href="#">My Courses</a>
+                                </li>
+                                <li class="hover:text-obito-green transition-all duration-300">
+                                    <a href="#">Certificates</a>
+                                </li>
+                                <li class="hover:text-obito-green transition-all duration-300">
+                                    <a href="my-subscriptions.html">Subscriptions</a>
+                                </li>
+                                <li class="hover:text-obito-green transition-all duration-300">
+                                    <a href="#">Settings</a>
+                                </li>
+                                <li class="hover:text-obito-green transition-all duration-300">
+                                    <a href="index.html">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="bottom-nav" class="flex w-full bg-white border-b border-obito-grey py-[14px]">
+            <ul class="flex w-full max-w-[1280px] px-[75px] mx-auto gap-3">
+                <li class="group">
+                    <a href="#" class="flex items-center gap-2 rounded-full border border-obito-grey py-2 px-[14px] hover:border-obito-green bg-white transition-all duration-300 group-[.active]:bg-obito-light-green group-[.active]:border-obito-light-green">
+                        <img src="assets/images/icons/home-trend-up.svg" class="flex shrink-0 w-5" alt="icon">
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="group">
+                    <a href="catalog-v2.html" class="flex items-center gap-2 rounded-full border border-obito-grey py-2 px-[14px] hover:border-obito-green bg-white transition-all duration-300 group-[.active]:bg-obito-light-green group-[.active]:border-obito-light-green">
+                        <img src="assets/images/icons/note-favorite.svg" class="flex shrink-0 w-5" alt="icon">
+                        <span>Courses</span>
+                    </a>
+                </li>
+                <li class="group">
+                    <a href="#" class="flex items-center gap-2 rounded-full border border-obito-grey py-2 px-[14px] hover:border-obito-green bg-white transition-all duration-300 group-[.active]:bg-obito-light-green group-[.active]:border-obito-light-green">
+                        <img src="assets/images/icons/message-programming.svg" class="flex shrink-0 w-5" alt="icon">
+                        <span>Quizzess</span>
+                    </a>
+                </li>
+                <li class="group">
+                    <a href="#" class="flex items-center gap-2 rounded-full border border-obito-grey py-2 px-[14px] hover:border-obito-green bg-white transition-all duration-300 group-[.active]:bg-obito-light-green group-[.active]:border-obito-light-green">
+                        <img src="assets/images/icons/cup.svg" class="flex shrink-0 w-5" alt="icon">
+                        <span>Certificates</span>
+                    </a>
+                </li>
+                <li class="group">
+                    <a href="#" class="flex items-center gap-2 rounded-full border border-obito-grey py-2 px-[14px] hover:border-obito-green bg-white transition-all duration-300 group-[.active]:bg-obito-light-green group-[.active]:border-obito-light-green">
+                        <img src="assets/images/icons/ruler&pen.svg" class="flex shrink-0 w-5" alt="icon">
+                        <span>Portfolios</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main class="flex justify-center py-5 flex-1 items-center">
+            <div class="w-[500px] flex flex-col gap-[30px]">
+                <div class="flex flex-col gap-[10px]">
+                    <div class="rounded-full !w-fit mx-auto py-2 px-[14px] bg-obito-light-green flex items-center gap-[6px]">
+                        <img src="assets/images/icons/crown-green.svg" alt="icon" class="size-[20px] shrink-0" />
+                        <p class="font-bold text-sm leading-[21px]">PRO UNLOCKED</p>
+                    </div>
+                    <h1 class="font-bold text-[28px] leading-[42px] text-center">Payment Successful</h1>
+                    <p class="text-center leading-[28px] text-obito-text-secondary">Anda telah memiliki akses kelas materi terbaru sebagai persiapan bekerja di era digital industri saat ini, yay!</p>
+                </div>
+                <section id="card" class="relative rounded-[20px] border border-obito-grey p-[10px] flex items-center gap-4 bg-white">
+                    <div class="flex items-center justify-center rounded-[14px] overflow-hidden w-[180px] h-[130px]">
+                        <img src="assets/images/thumbnails/succes-checkout.png" alt="image" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="flex flex-col gap-[10px]">
+                        <h2 class="font-bold">
+                            Subscription Active: <br />
+                            Pro Talent Digital Era 2025
+                        </h2>
+                        <div class="flex items-center gap-[6px]">
+                            <img src="assets/images/icons/calendar-green.svg" alt="icon" class="size-[20px] shrink-0" />
+                            <p class="text-obito-text-secondary text-sm leading-[21px]">3 Months Access</p>
+                        </div>
+                        <div class="flex items-center gap-[6px]">
+                            <img src="assets/images/icons/briefcase-green.svg" alt="icon" class="size-[20px] shrink-0" />
+                            <p class="text-obito-text-secondary text-sm leading-[21px]">Job-Ready Skills</p>
+                        </div>
+                    </div>
+                    <img src="assets/images/icons/cup-green-fill.svg" alt="icon" class="absolute top-1/2 right-0 size-[50px] shrink-0 -translate-y-1/2 translate-x-1/2" />
+                </section>
+                <div class="flex items-center gap-[14px] mx-auto">
+                    <a href="my-subscriptions.html">
+                        <div class="flex items-center px-5 justify-center border border-obito-grey rounded-full py-[10px] bg-white hover:border-obito-green transition-all duration-300">
+                            <p class="font-semibold">My Transactions</p>
+                        </div>
+                    </a>
+                    <a href="catalog-v2.html">
+                        <div class="flex items-center px-5 justify-center text-white rounded-full py-[10px] bg-obito-green hover:drop-shadow-effect transition-all duration-300">
+                            <p class="font-semibold">Start Learning</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <script src="js/dropdown-navbar.js"></script>
+    </body>
+</html>
