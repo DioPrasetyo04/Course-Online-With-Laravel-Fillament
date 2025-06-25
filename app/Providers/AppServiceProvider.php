@@ -4,12 +4,14 @@ namespace App\Providers;
 
 
 use App\Models\Transaction;
-use TransactionRepositoryInterface;
 use App\Observers\TransactionObserver;
+use App\Repositories\CourseRepository;
 use App\Repositories\PricingRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\TransactionRepository;
+use App\Repositories\CourseRepositoryInterface;
 use App\Repositories\PricingRepositoryInterface;
+use App\Repositories\TransactionRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,9 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // dalam singleton ini ada interface dan juga implementasi classnya
+        // dalam singleton ini ada interface dan juga implementasi classnya daftarkan service dan repository
         $this->app->singleton(PricingRepositoryInterface::class, PricingRepository::class);
         $this->app->singleton(TransactionRepositoryInterface::class, TransactionRepository::class);
+        $this->app->singleton(CourseRepositoryInterface::class, CourseRepository::class);
     }
 
     /**

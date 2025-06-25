@@ -6,10 +6,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontHomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::controller(FrontHomeController::class)->group(function () {
     Route::get('/', 'index')->name('front.index');
     Route::get('/pricing', 'pricing')->name('front.pricing');
