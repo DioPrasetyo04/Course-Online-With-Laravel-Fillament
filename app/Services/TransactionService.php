@@ -3,12 +3,9 @@
 namespace App\Services;
 
 use App\Models\Pricing;
-use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
-use App\Repositories\PricingRepository;
 use App\Repositories\PricingRepositoryInterface;
-use App\Repositories\TransactionRepository;
-use TransactionRepositoryInterface;
+use App\Repositories\TransactionRepositoryInterface;
 
 class TransactionService
 {
@@ -79,5 +76,10 @@ class TransactionService
     public function findTransactionId(string $bookingId)
     {
         return $this->TransactionRepository->findTransactionId($bookingId);
+    }
+
+    public function detailFindPricingId(int $pricingId)
+    {
+        return $this->TransactionRepository->detailFindPricingId($pricingId);
     }
 }

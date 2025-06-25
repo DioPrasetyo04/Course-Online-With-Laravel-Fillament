@@ -4,16 +4,16 @@ namespace App\Services;
 
 use App\Models\Pricing;
 use App\Helpers\TransactionHelper;
-use TransactionRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
-use App\Repositories\PricingRepositoryInterface;
+use App\Repositories\PricingRepository;
+use App\Repositories\TransactionRepository;
 
 class PaymentService
 {
     protected $midtransService;
     protected $pricingRepository;
     protected $transactionRepository;
-    public function __construct(MidtransService $midtransService, PricingRepositoryInterface $pricingRepository, TransactionRepositoryInterface $transactionRepository)
+    public function __construct(MidtransService $midtransService, PricingRepository $pricingRepository, TransactionRepository $transactionRepository)
     {
         $this->midtransService = $midtransService;
         $this->pricingRepository = $pricingRepository;

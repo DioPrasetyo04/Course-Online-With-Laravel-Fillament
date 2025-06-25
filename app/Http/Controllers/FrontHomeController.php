@@ -11,7 +11,6 @@ use App\Services\PricingService;
 use Illuminate\Support\Facades\Log;
 use App\Services\TransactionService;
 use Illuminate\Support\Facades\Auth;
-use App\Filament\Resources\PricingResource;
 
 class FrontHomeController extends Controller
 {
@@ -30,14 +29,14 @@ class FrontHomeController extends Controller
     }
     public function index()
     {
-        return view('front.index');
+        return view('front_courses.index');
     }
 
     public function pricing()
     {
         $pricing_packages = $this->pricingService->getAllPricing();
         $user = Auth::user();
-        return view('front.pricing', compact('pricing_packages', 'user'));
+        return view('front_courses.pricing', compact('pricing_packages', 'user'));
     }
 
     public function checkout(Pricing $pricing)
@@ -48,7 +47,7 @@ class FrontHomeController extends Controller
             return redirect()->route('front.pricing')->with('error', 'You are already subscribed to this package.');
         }
 
-        return view('front.checkout', $checkoutData);
+        return view('front_course.checkout', $checkoutData);
     }
 
     public function paymentStoreMidtrans()

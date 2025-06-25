@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Transaction;
-use TransactionRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
+use App\Repositories\TransactionRepositoryInterface;
 
 class TransactionRepository implements TransactionRepositoryInterface
 {
@@ -28,5 +28,11 @@ class TransactionRepository implements TransactionRepositoryInterface
     public function getUserTransactions(int $userId): Collection
     {
         return $this->transaction->with('pricing')->where('user_id', $userId)->orderBy('created_at', 'desc')->get();
+    }
+
+
+    public function detailFindPricingId(int $pricingId): ?Transaction
+    {
+        return $this->transaction->with('pricing')->where('pricing_id', $pricingId)->first();
     }
 }
