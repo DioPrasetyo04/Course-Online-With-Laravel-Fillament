@@ -11,12 +11,12 @@ Route::controller(FrontHomeController::class)->group(function () {
     Route::get('/pricing', 'pricing')->name('front.pricing');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::middleware('role:student')->group(function () {
+    Route::middleware(['role:student'])->group(function () {
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/dashboard/subscription', 'subscription')->name('dashboard.subscription');
             Route::get('/dashboard/subscription/{transaction}', 'subscriptionDetails')->name('dashboard.subscription.details');
