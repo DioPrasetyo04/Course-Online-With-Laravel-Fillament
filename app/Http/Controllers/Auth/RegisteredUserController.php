@@ -31,19 +31,31 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'occupation' => ['required', 'string', 'max:255'],
+            'photo' => ['required', 'image', 'mimes:png,jpg,jpeg,webp', 'max:2048'],
         ]);
+
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('photos', 'public');
+        } else {
+            $photoPath = null;
+        }
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'occupation' => $request->occupation,
+            'photo' => $photoPath,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        $user->assignRole('student');
 
         return redirect(route('dashboard', absolute: false));
     }
