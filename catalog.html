@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maritim X Online Platform Course Learning</title>
+
+    <!-- Tailwind CSS -->
+    <link href="src/output.css" rel="stylesheet" />
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="60x60" href="/src/assets/image/logos/maritim_x_remove_bg.png" />
+    <link rel="apple-touch-icon" href="./src/assets/image/logos/maritim_x_remove_bg.png" />
+    <meta name="description"
+        content="Maritim X is an online plarform courses that powers students and profesionals with high-quality learning materials">
+    <meta name="keywords"
+        content="Maritim X, online courses, learning platform, professional development, skill enhancement">
+    <meta property="og:title" content="Maritim X Online Platform Course Learning">
+    <meta property="og:description"
+        content="Maritim X is an online platform that provides high-quality courses for students and professionals to enhance their skills and knowledge.">
+</head>
+
+<body class="relative overflow-x-hidden">
+    <!-- section navbar -->
+    <!-- Navbar Desktop -->
+    <nav
+        class="w-full hidden justify-between items-center px-8 pt-2 bg-white border-b border-gray-200 shadow-sm lg:flex md:hidden sm:hidden">
+        <!-- Logo & Navigasi -->
+        <div class="flex justify-center items-center gap-8">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo" class="w-[100px]" />
+                <h1 class="text-2xl font-bold text-blue-700 uppercase">Maritim X Accademy</h1>
+            </a>
+            <ul class="hidden lg:flex items-center gap-8 ml-4">
+                <li><a href="index.html"
+                        class="text-lg font-medium text-gray-700 hover:text-amber-600 transition">Home</a></li>
+                <li><a href="pricing.html"
+                        class="text-lg font-medium text-gray-700 hover:text-amber-600 transition">Pricing</a></li>
+                <li><a href="features.html"
+                        class="text-lg font-medium text-gray-700 hover:text-amber-600 transition">Features</a></li>
+                <li><a href="testimonials.html"
+                        class="text-lg font-medium text-gray-700 hover:text-amber-600 transition">Testimonials</a></li>
+            </ul>
+        </div>
+
+        <!-- Icon & Profile -->
+        <div class="flex justify-end items-center gap-6">
+            <a href="#"><img src="./src/assets/image/icons/device-message.svg" class="w-6" alt="message" /></a>
+            <a href=""><img src="./src/assets/image/icons/category.svg" class="w-6" alt="category"></a>
+            <a href=""><img src="./src/assets/image/icons/notification.svg" class="w-6" alt="notification" /></a>
+            <div class="w-[2px] h-[80px] bg-gray-300"></div>
+            <div id="profile-dropdown" class="flex items-center gap-3 relative cursor-pointer">
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-gray-300">
+                    <img src="./src/assets/image/photos/sami.png" alt="profile" class="w-full h-full object-cover">
+                </div>
+                <div class="hidden lg:flex flex-col">
+                    <p class="font-semibold text-base">Tamara Utami</p>
+                    <p class="text-sm text-gray-500">Full Stack Developer</p>
+                </div>
+                <button id="dropdown-opener" class="flex shrink-0 w-6 h-6 cursor-pointer">
+                    <img src="./src/assets/image/icons/arrow-circle-down.svg" alt="icon dropdown" class="w-6 h-6" />
+                </button>
+                <div id="profile-menu-dropdown"
+                    class="absolute top-full right-0 mt-[7px] w-[170px] h-fit bg-white rounded-xl border border-gray-200 py-4 px-5 shadow-[0px_10px_30px_0px_#B8B8B840] z-[50] hidden">
+                    <ul class="flex flex-col gap-[20px]">
+                        <li
+                            class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                            <a href="#">My Courses</a>
+                        </li>
+                        <li
+                            class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                            <a href="#">Certificates</a>
+                        </li>
+                        <li
+                            class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                            <a href="my-subscriptions.html">Subscriptions</a>
+                        </li>
+                        <li
+                            class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                            <a href="#">Settings</a>
+                        </li>
+                        <li
+                            class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                            <a href="index.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar Desktop -->
+
+    <!-- Navbar responsive -->
+    <nav class="flex lg:hidden justify-between items-center px-4 py-4 gap-[10px] bg-white border-b border-gray-200">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo" class="w-[80px]" />
+                <h1 class="hidden text-2xl font-bold text-blue-700 uppercase sm:hidden lg:inline-block md:hidden">
+                    Maritim X Accademy
+                </h1>
+            </a>
+        </div>
+        <div class="flex justify-end items-center gap-2">
+            <div class="flex justify-end items-center gap-2">
+                <a href="#"><img src="./src/assets/image/icons/device-message.svg" class="w-6" alt="message" /></a>
+                <a href=""><img src="./src/assets/image/icons/category.svg" class="w-6" alt="category"></a>
+                <a href=""><img src="./src/assets/image/icons/notification.svg" class="w-6" alt="notification" /></a>
+                <div class="w-[2px] h-[80px] bg-gray-300"></div>
+                <div id="profile-mobile-dropdown" class="flex items-center gap-3 relative z-[99999] cursor-pointer">
+                    <div class="w-15 rounded-full overflow-hidden border border-gray-300">
+                        <img src="./src/assets/image/photos/sami.png" alt="profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="sm:flex-col md:flex-col lg:flex-col flex-col w-full">
+                        <p class="font-semibold w-full text-sm max-w-2xl">Tamara Utami</p>
+                        <p class="lg:flex text-xs text-gray-500 max-w-2xl w-full">Web Developer</p>
+                    </div>
+                    <div id="profile-menu-mobile-dropdown"
+                        class="absolute right-0 top-full mt-2 w-[150px] bg-gray-200 rounded-xl border border-gray-200 py-4 px-5 shadow-lg z-[9999] hidden transition-all duration-300 ease-in-out">
+                        <ul class="flex flex-col gap-[20px]">
+                            <li
+                                class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                                <a href="#">My Courses</a>
+                            </li>
+                            <li
+                                class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                                <a href="#">Certificates</a>
+                            </li>
+                            <li
+                                class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                                <a href="my-subscriptions.html">Subscriptions</a>
+                            </li>
+                            <li
+                                class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                                <a href="#">Settings</a>
+                            </li>
+                            <li
+                                class="hover:text-green-500 hover:cursor-pointer w-full transform transition-all duration-300">
+                                <a href="index.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button id="hamburger" class="p-2">
+                        <img src="./src/assets/image/icons/hamburger.png" alt="menu" class="w-10" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar mobile menu -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white translate-x-full transform transition-transform duration-300 z-[9999]">
+        <div class="flex justify-between items-center border-b">
+            <a href="index.html">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo maritim X"
+                    class="w-[100px] bg-no-repeat bg-cover">
+            </a>
+            <button id="close-menu" class="text-gray-600 text-5xl hidden">&times;</button>
+        </div>
+        <ul class="flex flex-col w-full gap-4 p-6 text-lg font-medium">
+            <li><a href="index.html" class="hover:text-amber-600">Home</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Pricing</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Features</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Testimonials</a></li>
+        </ul>
+    </div>
+
+    <!-- overlay background transparan -->
+    <div id="overlay" class="fixed inset-0 bg-black/50z z-[9998] hidden transition-opacity duration-300"></div>
+    <!-- overlay menu menimbulkan effect gelap transparent ketika membuka navbar mobile menu -->
+    <!-- navbar mobile menu -->
+    <!-- section navbar -->
+
+    <nav id="bottom-nav"
+        class="absolute w-full flex flex-row pb-[10px] pt-[15px] px-10 border-b border-gray-200 shadow-md">
+        <ul class="flex flex-row w-full gap-[10px] justify-start items-center px-2 list-none">
+            <li class="group">
+                <a href="#"
+                    class="flex border border-solid border-gray-200 rounded-full px-5 justify-center items-center p-[10px] gap-[5px] hover:bg-green-800 transition-all duration-300 group-[.active]:bg-green-400 group-[.active]: border-green-400] group-[.active]:text-white">
+                    <img src="./src/assets/image/icons/home-trend-up.svg" alt="home trend svg" class="w-6">
+                    <span class="font-semibold text-sm">Overview</span>
+                </a>
+            </li>
+            <li class="group active">
+                <a href="#"
+                    class="flex border border-solid border-gray-200 rounded-full px-5 justify-center items-center p-[10px] gap-[5px] hover:bg-green-800 transition-all duration-300 group-[.active]:bg-green-400 group-[.active]: border-green-400] group-[.active]:text-white">
+                    <img src="./src/assets/image/icons/note-favorite.svg" alt="home trend svg" class="w-6">
+                    <span class="font-semibold text-sm">Courses</span>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#"
+                    class="flex border border-solid border-gray-200 rounded-full px-5 justify-center items-center p-[10px] gap-[5px] hover:bg-green-800 transition-all duration-300 group-[.active]:bg-green-400 group-[.active]: border-green-400] group-[.active]:text-white">
+                    <img src="./src/assets/image/icons/message-programming.svg" alt="home trend svg" class="w-6">
+                    <span class="font-semibold text-sm">Quizzess</span>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#"
+                    class="flex border border-solid border-gray-200 rounded-full px-5 justify-center items-center p-[10px] gap-[5px] hover:bg-green-800 transition-all duration-300 group-[.active]:bg-green-400 group-[.active]: border-green-400] group-[.active]:text-white">
+                    <img src="./src/assets/image/icons/cup.svg" alt="home trend svg" class="w-6">
+                    <span class="font-semibold text-sm">Certificates</span>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#"
+                    class="flex border border-solid border-gray-200 rounded-full px-5 justify-center items-center p-[10px] gap-[5px] hover:bg-green-800 transition-all duration-300 group-[.active]:bg-green-400 group-[.active]: border-green-400] group-[.active]:text-white">
+                    <img src="./src/assets/image/icons/ruler&pen.svg" alt="home trend svg" class="w-6">
+                    <span class="font-semibold text-sm">Portofolios</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="./src/layout.js"></script>
+</body>
+
+</html>

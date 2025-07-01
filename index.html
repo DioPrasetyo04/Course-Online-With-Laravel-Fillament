@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maritim X Online Platform Course Learning</title>
+
+    <!-- Tailwind CSS -->
+    <link href="src/output.css" rel="stylesheet" />
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="60x60" href="/src/assets/image/logos/maritim_x_remove_bg.png" />
+    <link rel="apple-touch-icon" href="./src/assets/image/logos/maritim_x_remove_bg.png" />
+    <meta name="description"
+        content="Maritim X is an online plarform courses that powers students and profesionals with high-quality learning materials">
+    <meta name="keywords"
+        content="Maritim X, online courses, learning platform, professional development, skill enhancement">
+    <meta property="og:title" content="Maritim X Online Platform Course Learning">
+    <meta property="og:description"
+        content="Maritim X is an online platform that provides high-quality courses for students and professionals to enhance their skills and knowledge.">
+</head>
+
+<body class="relative overflow-x-hidden">
+
+    <!-- section navbar -->
+    <!-- Navbar Desktop -->
+    <nav
+        class="hidden absolute w-full lg:flex lg:flex-row gap-[10px] lg:gap-[10px] md:gap-[5px] justify-between items-center px-6 pt-2 pb-0 bg-white border-b border-gray-200">
+        <div class="flex flex-row justify-center items-center gap-x-6">
+            <a href="index.html" class="flex items-center gap-x-4">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo" class="w-[100px] bg-cover" />
+                <h1 class="text-2xl font-bold text-blue-700 uppercase">Maritim X Accademy</h1>
+            </a>
+            <ul class="flex flex-row justify-center items-center gap-10 list-none">
+                <li><a href="index.html" class="text-xl font-semibold hover:text-amber-600">Home</a></li>
+                <li><a href="pricing.html" class="text-xl font-semibold hover:text-amber-600">Pricing</a></li>
+                <li><a href="catalog.html" class="text-xl font-semibold hover:text-amber-600">Features</a></li>
+                <li><a href="testimonials.html" class="text-xl font-semibold hover:text-amber-600">Testimonials</a></li>
+            </ul>
+        </div>
+        <div class="flex flex-row justify-end items-center gap-[10px] lg:gap-[10px] md:gap-[5px] lg:justify-end">
+            <a href="#"><img src="./src/assets/image/icons/device-message.svg" class="w-6" alt="message" /></a>
+            <div class="w-[1px] h-10 bg-gray-300"></div>
+            <a href="signup.html"
+                class="px-4 py-2 border rounded-full text-black hover:bg-[#2F6A62] hover:text-white">Sign Up</a>
+            <a href="signin.html" class="px-4 py-2 bg-[#2F6A62] text-white rounded-full hover:bg-amber-600">Register</a>
+        </div>
+    </nav>
+    <!-- navbar Desktop -->
+
+    <!-- Navbar responsive -->
+    <nav class="flex lg:hidden justify-between items-center px-4 py-4 gap-[10px] bg-white border-b border-gray-200">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo" class="w-[100px]" />
+                <h1 class="hidden text-2xl font-bold text-blue-700 uppercase sm:hidden lg:inline-block md:hidden">
+                    Maritim X Accademy
+                </h1>
+            </a>
+        </div>
+        <div class="flex justify-end items-center gap-2">
+            <a href="signup.html"
+                class=" px-2 py-2 border rounded-full text-black hover:bg-[#2F6A62] hover:text-white">Sign
+                Up</a>
+            <a href="signin.html" class="px-2 py-2 bg-[#2F6A62] text-white rounded-full hover:bg-amber-600">Register</a>
+            <button id="hamburger" class="p-2">
+                <img src="./src/assets/image/icons/hamburger.png" alt="menu" class="w-[50px]" />
+            </button>
+        </div>
+    </nav>
+
+    <!-- navbar mobile menu -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white translate-x-full transform transition-transform duration-300 z-[9999]">
+        <div class="flex justify-between items-center border-b">
+            <a href="index.html">
+                <img src="./src/assets/image/logos/maritim_x_remove_bg.png" alt="logo maritim X"
+                    class="w-[100px] bg-no-repeat bg-cover">
+            </a>
+            <button id="close-menu" class="text-gray-600 text-5xl hidden">&times;</button>
+        </div>
+        <ul class="flex flex-col w-full gap-4 p-6 text-lg font-medium">
+            <li><a href="index.html" class="hover:text-amber-600">Home</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Pricing</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Features</a></li>
+            <li><a href="index.html" class="hover:text-amber-600">Testimonials</a></li>
+        </ul>
+    </div>
+
+    <!-- overlay background transparan -->
+    <div id="overlay" class="fixed inset-0 bg-black/50z z-[9998] hidden transition-opacity duration-300"></div>
+    <!-- overlay menu menimbulkan effect gelap transparent ketika membuka navbar mobile menu -->
+    <!-- navbar mobile menu -->
+    <!-- section navbar -->
+
+    <!-- main view -->
+    <main
+        class="flex w-full items-center py-[50px] lg:py-[300px] bg-white flex-wrap-reverse justify-center lg:flex-nowrap lg:items-center lg:justify-center">
+        <div
+            class="w-full flex flex-wrap-reverse lg:flex-nowrap gap-[77px] justify-center items-center lg:justify-between lg:items-center pl-[20px] pr-[10px] lg:pl-[calc(((100%-1280px)/2)+75px)]">
+            <div class="flex flex-col max-w-[500px] gap-[50px]">
+                <div class="flex-col gap-[30px]">
+                    <p class="flex items-center gap-[6px] w-fit rounded-full py-2 px-[14px] bg-lime-500">
+                        <img src="./src/assets/image/icons/crown-green.svg" alt="verified" class="flex shrink-0 w-5">
+                        <span class="font-bold text-sm uppercase">trusted by 500 fortune angga companies</span>
+                    </p>
+                    <div class="flex flex-col gap-y-2">
+                        <h1 class="font-extrabold text-[50px] leading-[65px] text-uppercase">Upgrade Skills, <br>Get
+                            Higher Salary</h1>
+                        <p class="leading-7 mt-[10px] text-gray-500 uppercase">Materi terbaru disusun oleh professional
+                            dan perusahaan besar agar lebih sesuai kebutuhan dan anda lorem dolorsi.</p>
+                    </div>
+                    <div class="flex items-center text-center justify-center w-full max-w-full gap-[18px]">
+                        <a href="pricing.html"
+                            class="flex text-center w-full max-w-full justify-center items-center rounded-full h-[67px] py-5 px-[20px] gap-[10px] mt-[10px] bg-green-600 hover:drop-shadow-effects hover:bg-amber-500 transition-all duration-300">
+                            <span class="text-white font-semibold text-lg">Get
+                                Started</span>
+                        </a>
+                        <a href="pricing.html"
+                            class="flex w-full justify-center max-w-full items-center rounded-full h-[67px] py-5 px-[30px] gap-[10px] mt-[10px] border border-gray-500 bg-white hover:bg-amber-500 hover:border-amber-400 transition-all duration-300">
+                            <img src="./src/assets/image/icons/play-circle-fill.svg" alt="icons"
+                                class="size-8 flex shrink-0 hover:text-white">
+                            <span class="text-black hover:text-white font-semibold text-lg">How It Works</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-[14px]">
+                    <img src="./src/assets/image/photos/group.png" alt="testimonial photo"
+                        class="flex shrink-0 h-[50px] rounded-full object-cover">
+                    <div class="flex flex-col gap-[6px]">
+                        <div class="flex gap-1 items-center">
+                            <div class="flex flex-row gap-1">
+                                <img src="./src/assets/image/icons/Star 1.svg" alt="star logo"
+                                    class="flex shrink-0 w-4 lg:w-5">
+                                <img src="./src/assets/image/icons/Star 1.svg" alt="star logo"
+                                    class="flex shrink-0 w-4 lg:w-5">
+                                <img src="./src/assets/image/icons/Star 1.svg" alt="star logo"
+                                    class="flex shrink-0 w-4 lg:w-5">
+                                <img src="./src/assets/image/icons/Star 1.svg" alt="star logo"
+                                    class="flex shrink-0 w-4 lg:w-5">
+                                <img src="./src/assets/image/icons/Star 1.svg" alt="star logo"
+                                    class="flex shrink-0 w-4 lg:w-5">
+                            </div>
+                            <span class="font-bold">5.0</span>
+                        </div>
+                        <div class="flex w-full max-w-3xl lg:w-full lg:max-w-2xl">
+                            <p class="font-bold max-w-xs w-full lg:max-w-full text-gray-500">Join Millions Developer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex shrink-0 h-[400px] w-[380px] lg:w-[500px] lg:h-[500px] justify-center lg:justify-end lg:items-center">
+                <img src="./src/assets/image/backgrounds/hero-image.png" alt="hero-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="./src/layout.js"></script>
+</body>
+
+</html>
