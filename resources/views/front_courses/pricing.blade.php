@@ -1,4 +1,5 @@
 @extends('front_courses.layouts.app')
+@section('title', 'Pricing - Course LMS Obito')
 @section('content')
 <x-nav-guest />
 <main class="flex flex-col flex-1 justify-center">

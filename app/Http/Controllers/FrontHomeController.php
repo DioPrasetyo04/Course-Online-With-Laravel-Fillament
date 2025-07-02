@@ -47,7 +47,7 @@ class FrontHomeController extends Controller
             return redirect()->route('front.pricing')->with('error', 'You are already subscribed to this package.');
         }
 
-        return view('front_course.checkout', $checkoutData);
+        return view('front_courses.checkout', $checkoutData);
     }
 
     public function paymentStoreMidtrans()

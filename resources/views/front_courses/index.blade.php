@@ -1,5 +1,5 @@
 @extends('front_courses.layouts.app')
-@section('title', 'Home') 
+@section('title', 'Home - Course LMS Obito') 
 @section('content')
 <x-nav-guest />
         <main class="flex flex-1 items-center py-[70px]">

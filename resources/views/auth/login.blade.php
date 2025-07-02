@@ -1,25 +1,6 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ asset('css/output.css') }}" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        <title>Sign In - Obito Online Learning Platform</title>
-        <meta name="description" content="Obito is an innovative online learning platform that empowers students and professionals with high-quality, accessible courses.">
-
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logos/logo-64.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('assets/images/logos/logo-64.png') }}">
-
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Obito Online Learning Platform - Learn Anytime, Anywhere">
-        <meta property="og:description" content="Obito is an innovative online learning platform that empowers students and professionals with high-quality, accessible courses.">
-        <meta property="og:image" content="https://obito-platform.netlify.app/assets/images/logos/logo-64-big.png">
-        <meta property="og:url" content="https://obito-platform.netlify.app">
-        <meta property="og:type" content="website">
-    </head>
-    <body>
+@extends('front_courses.layouts.app')
+@section('title', 'Login - Course LMS Obito')
+@section('content')
         <x-nav-guest />
         <main class="relative flex flex-1 h-full">
             <section class="flex flex-1 items-center py-5 px-5 pl-[calc(((100%-1280px)/2)+75px)]">
@@ -54,7 +35,9 @@
                 </div>
             </div>
         </main>
+@endsection
 
-        <script src="{{ asset('js/dropdown-navbar.js') }}"></script>
-    </body>
-</html>
+@push('after-scripts')
+    {{-- penempatan script yang akan diteruskan akan menggunakan push sebagai turunan --}}
+    <script src="{{ asset('js/dropdown-navbar.js') }}"></script>
+@endpush
