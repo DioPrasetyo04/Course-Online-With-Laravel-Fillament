@@ -18,6 +18,6 @@ class PricingRepository implements PricingRepositoryInterface
     public function getAllPricing(): Collection
     {
         // pake resource
-        return Pricing::query()->all();
+        return Pricing::all();
     }
 }

@@ -5,16 +5,16 @@
                         <img src="{{asset('assets/images/logos/logo.svg') }}" class="flex shrink-0" alt="logo">
                     </a>
                     <ul class="flex items-center gap-10">
-                        <li class="hover:font-semibold transition-all duration-300 font-semibold">
+                        <li class="{{ request()->routeIs('front.index') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold'}} transition-all duration-300 font-semibold">
                             <a href={{ route('front.index') }}>Home</a>
                         </li>
-                        <li class="hover:font-semibold transition-all duration-300">
+                        <li class="{{ request()->routeIs('front.pricing') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold'}} transition-all duration-300 font-semibold">
                             <a href={{ route('front.pricing') }}>Pricing</a>
                         </li>
-                        <li class="hover:font-semibold transition-all duration-300">
+                        <li class="{{ request()->routeIs('front.features') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold'}} transition-all duration-300 font-semibold">
                             <a href="#">Features</a>
                         </li>
-                        <li class="hover:font-semibold transition-all duration-300">
+                        <li class="{{ request()->routeIs('front.testimonials') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold'}} transition-all duration-300 font-semibold">
                             <a href="#">Testimonials</a>
                         </li>
                     </ul>
