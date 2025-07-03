@@ -104,9 +104,9 @@ class FrontHomeController extends Controller
         $pricing = $this->transactionService->getRecentPricing();
 
         if (!$pricing) {
-            return redirect()->route('front.pricing')->with('error', 'Pricing not found');
+            return redirect()->route('front_courses.pricing')->with('error', 'Pricing not found');
         }
 
-        return view('front.checkout_success', compact('pricing'));
+        return view('front_courses.checkout_success', compact('pricing'));
     }
 }
