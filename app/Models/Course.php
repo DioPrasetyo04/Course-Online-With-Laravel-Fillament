@@ -61,7 +61,7 @@ class Course extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function getCourseContentAtribute()
+    public function getCourseContentAttribute()
     {
         return $this->courseSections->sum(function ($section) {
             return $section->sectionContents->count();
