@@ -31,7 +31,7 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
-        $course->load(['category', 'benefits', 'courseSections.sectionContents']);
+        $course->load(['category', 'benefits', 'courseSections.sectionContents', 'courseMentors.mentor']);
         return view('courses.details', compact('course'));
     }
 

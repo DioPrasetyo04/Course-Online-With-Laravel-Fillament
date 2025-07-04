@@ -84,10 +84,9 @@
                         <hr class="border-obito-grey">
                         @if ($user && $package->isSubscribedByUser($user->id))
                             <a href="#"
-                                class="w-full h-11 rounded-full pt-[10px] px-5 gap-[10px] bg-obito-green text-center hover:drop-shadow-effect transition-all duration-300">
-                                <span class="font-semibold text-white">You've Subscribed</span>
+                                class="w-full h-11 rounded-full pt-[10px] px-5 gap-[10px] bg-obito-green text-center hover:drop-shadow-effect transition-all duration-300 disabled">
+                                <span class="font-semibold text-white disabled">You've Subscribed</span>
                             </a>
-                            
                         @else
 
                             <a href="{{ route('front.checkout', $package) }}"
