@@ -46,24 +46,30 @@ class CourseService
         $course->load(['courseSections.sectionContents']);
 
         // Mengambil section saat ini
-        $currentSection = $course->courseSections()->find($contentSectionId);
+        $currentSection = $course->courseSections->find($contentSectionId);
         // mengambil content dari section saat ini
-        $currentContent = $currentSection ? $currentSection->SectionContents()->find($sectionContentId) : null;
+        $currentContent = $currentSection ? $currentSection->sectionContents->find($sectionContentId) : null;
 
         // buat variable next content
         $nextContent = null;
 
         // check content ada gk
         if ($currentContent) {
-            $nextContent = $currentSection->sectionContents()->where('id', '>', $currentSection->id)->sortBy('id')->first();
+            $nextContent = $currentSection->sectionContents
+                ->where('id', '>', $currentContent->id)
+                ->sortBy('id')
+                ->first();
         }
 
         // check section ada gk
         if (!$nextContent && $currentSection) {
-            $nextSection = $course->courseSections()->where('id', '>', $currentSection->id)->sortBy('id')->first();
+            $nextSection = $course->courseSections
+                ->where('id', '>', $currentSection->id)
+                ->sortBy('id')
+                ->first();
 
             if ($nextSection) {
-                $nextContent = $nextSection->sectionContents()->sortBy('id')->first();
+                $nextContent = $nextSection->sectionContents->sortBy('id')->first();
             }
         }
 
@@ -72,7 +78,7 @@ class CourseService
             'currentSection' => $currentSection,
             'currentContent' => $currentContent,
             'nextContent' => $nextContent,
-            'isFinished' => !$nextContent
+            'isFinished' => !$nextContent,
         ];
     }
 

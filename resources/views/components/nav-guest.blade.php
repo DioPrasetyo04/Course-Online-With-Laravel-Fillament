@@ -15,7 +15,7 @@
                 </li>
                 <li
                     class="{{ request()->routeIs('front.features') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold' }} transition-all duration-300 font-semibold">
-                    <a href="#">Features</a>
+                    <a href="{{ route('dashboard') }}">Course</a>
                 </li>
                 <li
                     class="{{ request()->routeIs('front.testimonials') ? 'font-semibold text-orange-500 hover:text-blue-500' : 'font-normal text-black hover:text-orange-500 hover:font-semibold' }} transition-all duration-300 font-semibold">
