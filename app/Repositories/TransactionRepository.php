@@ -27,7 +27,7 @@ class TransactionRepository implements TransactionRepositoryInterface
 
     public function getUserTransactions(int $userId): Collection
     {
-        return $this->transaction->with('pricing')->where('user_id', $userId)->orderBy('created_at', 'desc')->get();
+        return $this->transaction->with('pricing')->whereHas('pricing')->where('user_id', $userId)->orderBy('created_at', 'desc')->get();
     }
 
 

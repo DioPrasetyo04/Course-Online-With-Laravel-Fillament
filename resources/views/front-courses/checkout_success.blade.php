@@ -1,4 +1,4 @@
-@extends('front_courses.layouts.app')
+@extends('front-courses.layouts.app')
 @section('title', 'Checkout Success - LMS Obito')
 @section('content')
     <x-navigation-auth />

@@ -67,9 +67,6 @@ class TransactionService
 
         // menggunakan repository
         $user = Auth::user();
-        if (!$user) {
-            return collect([]);
-        }
         return $this->TransactionRepository->getUserTransactions($user->id);
     }
 

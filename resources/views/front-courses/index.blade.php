@@ -1,4 +1,4 @@
-@extends('front_courses.layouts.app')
+@extends('front-courses.layouts.app')
 @section('title', 'Home - Course LMS Obito')
 @section('content')
     <x-nav-guest />

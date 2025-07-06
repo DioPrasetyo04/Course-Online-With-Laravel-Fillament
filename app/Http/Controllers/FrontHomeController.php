@@ -29,14 +29,14 @@ class FrontHomeController extends Controller
     }
     public function index()
     {
-        return view('front_courses.index');
+        return view('front-courses.index');
     }
 
     public function pricing()
     {
         $pricing_packages = $this->pricingService->getAllPricing();
         $user = Auth::user();
-        return view('front_courses.pricing', compact('pricing_packages', 'user'));
+        return view('front-courses.pricing', compact('pricing_packages', 'user'));
     }
 
     public function checkout(Pricing $pricing)
@@ -47,7 +47,7 @@ class FrontHomeController extends Controller
             return redirect()->route('front.pricing')->with('error', 'You are already subscribed to this package.');
         }
 
-        return view('front_courses.checkout', $checkoutData);
+        return view('front-courses.checkout', $checkoutData);
     }
 
     public function paymentStoreMidtrans()
@@ -107,6 +107,6 @@ class FrontHomeController extends Controller
             return redirect()->route('front_courses.pricing')->with('error', 'Pricing not found');
         }
 
-        return view('front_courses.checkout_success', compact('pricing'));
+        return view('front-courses.checkout_success', compact('pricing'));
     }
 }
