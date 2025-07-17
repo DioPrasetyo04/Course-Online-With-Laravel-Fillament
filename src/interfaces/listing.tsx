@@ -9,7 +9,7 @@ export interface Listing {
   max_person: number;
   attachments?: string[];
   price_per_day: number;
-  full_suppport_available: number;
+  full_support_available: number;
   gym_area_available: number;
   mini_cafe_available: number;
   cinema_available: number;
